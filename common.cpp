@@ -71,7 +71,19 @@ int Write(int fd,void* ptr,int num)
 
 int readline(int fd,void* ptr,int max_len)
 {
-	
-	
+	int n=0;
+	if(-1!=(n=Read(fd,vptr,max_len)))
+	{
+		for(int i=0;i<max_len;i++)
+		{
+			if(vptr[i]=='\n')
+			{
+				memset(vptr+i+1,0,max_len-i-1);
+				return i+1;
+			}
+		}
+		return max_len;
+	}
+	return -1;
 }
 
