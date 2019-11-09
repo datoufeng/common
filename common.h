@@ -5,3 +5,5 @@ int Read(int fd,void* ptr,int num);		/*读取n个字节*/
 int readline(int fd,void* ptr,int max_len);		/*读取一行内容*/
 
 int Write(int fd,void* ptr,int num);		/**/
+
+/*overflow*/
